@@ -1,0 +1,21 @@
+{
+    "name": "aiteemo\/weather",
+    "description": "A weather PHP SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aiteemo",
+            "email": "1301582878@qq.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.1",
+        "phpunit/phpunit": "^9.4",
+        "mockery/mockery": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aiteemo\\Weather\\": "src"
+        }
+    }
+}

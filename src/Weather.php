@@ -23,6 +23,30 @@ class Weather
         $this->key = $key;
     }
 
+    /**
+     * 获取实时天气
+     *
+     * @param string $city
+     * @param string $output
+     * @return json/xml $result;
+     */
+    public function getLiveWeather($city, $output = 'JSON')
+    {
+        return $this->getWeather($city, 'base', $output);
+    }
+
+    /**
+     * 获取天气预报
+     *
+     * @param string $city
+     * @param string $output
+     * @return json/xml $result;
+     */
+    public function getForecastsWeather($city, $output = 'JSON')
+    {
+        return $this->getWeather($city, 'all', $output);
+    }
+
     // get client
     public function getHttpClient()
     {
@@ -46,7 +70,7 @@ class Weather
      * @param string $extensions 可选值：base/all base:返回实况天气 all:返回预报天气
      * @param string $output     返回格式 可选值：JSON,XML
      * @throws
-     * @return json $result;
+     * @return json/xml $result;
      */
     public function getWeather($city, $extensions = 'base', $output = 'JSON')
     {

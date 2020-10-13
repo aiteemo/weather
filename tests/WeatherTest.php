@@ -116,4 +116,47 @@ class WeatherTest extends TestCase
         $this->expectExceptionMessage('request timeout');
         $weather->getWeather('深圳');
     }
+
+    public function testGetLiveWeather()
+    {
+        // 将 getWeather 接口模拟为返回固定内容，以测试参数传递是否正确
+        $weather = \Mockery::mock(Weather::class, [ 'mk' ])->makePartial();
+        $weather->expects()->getWeather('深圳', 'base', 'JSON')->andReturn('{"status":"1"}');
+
+        // 断言正确传参并返回
+        $this->assertSame('{"status":"1"}', $weather->getLiveWeather('深圳'));
+    }
+
+    public function testGetForecastsWeather()
+    {
+        // 将 getWeather 接口模拟为返回固定内容，以测试参数传递是否正确
+        $weather = \Mockery::mock(Weather::class, [ 'mk' ])->makePartial();
+        $weather->expects()->getWeather('深圳', 'all', 'JSON')->andReturn('{"status":"1"}');
+
+        // 断言正确传参并返回
+        $this->assertSame('{"status":"1"}', $weather->getForecastsWeather('深圳'));
+    }
+
+    public function testGetHttpClient()
+    {
+        $weather = new Weather('mk');
+
+        // 断言返回结果为 GuzzleHttp\ClientInterface 实例
+        $this->assertInstanceOf(ClientInterface::class, $weather->getHttpClient());
+    }
+
+    public function testSetGuzzleHttpOptions()
+    {
+        $weather = new Weather('mk');
+
+        // 设置参数前，timeout 为 null
+        $this->assertNull($weather->getHttpClient()->getConfig('timeout'));
+
+        // 设置参数
+        $weather->setGuzzleHttpOptions([ 'timeout' => 5000 ]);
+
+        // 设置参数后，timeout 为 5000
+        $this->assertSame(5000, $weather->getHttpClient()->getConfig('timeout'));
+    }
+
 }

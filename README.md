@@ -25,7 +25,11 @@ $weather    = new Weather($key);
 use Aiteemo\Weather\Weather;
 $key      = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 $weather  = new Weather($key);
+
 $response = $weather->getWeather('深圳');
+
+// 或者直接调用：getLiveWeather（version >= 0.0.2）
+// $response = $weather->getLiveWeather('深圳'); 
 ```
 
 ### 获取近期天气预报
@@ -34,7 +38,11 @@ $response = $weather->getWeather('深圳');
 use Aiteemo\Weather\Weather;
 $key      = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 $weather  = new Weather($key);
+
 $response = $weather->getWeather('深圳', 'all');
+
+// 或者直接调用：getForecastsWeather（version >= 0.0.2）
+// $response = $weather->getForecastsWeather('深圳'); 
 ```
 ### 返回格式
 第三个参数为返回值类型，可选 json 与 xml ，默认json ：

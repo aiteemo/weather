@@ -80,7 +80,3 @@ class Weather
         }
     }
 }
-
-/*require "/data/docker/www/test2/section_4_composer/weather/vendor/autoload.php";
-$m = new Weather('1d6d10fc03d935042ceeee9eda128802');
-echo $m->getWeather('北京');*/

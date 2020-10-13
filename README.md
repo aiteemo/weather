@@ -6,7 +6,7 @@
 ## 🏷Installing
 
 ```shell
-$ composer require aiteemo/weather -vvv
+$ composer require aiteemo/weather dev-main
 ```
 
 ## 🏷配置

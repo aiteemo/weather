@@ -1,7 +1,7 @@
 <h1 align="center"> weather </h1>
 
 <p align="center"> 基于高德开放平台的PHP天气信息组件。</p>
-[![Build Status](https://travis-ci.org/aiteemo/weather.svg?branch=main)](https://travis-ci.org/aiteemo/weather)
+[![Build Status](https://travis-ci.org/aiteemo/weather.svg?branch=main)
 
 ## 🏷Installing
 

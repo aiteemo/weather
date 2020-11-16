@@ -11,4 +11,10 @@ install: travis_retry composer install --no-interaction --prefer-source
 script: vendor/bin/phpunit --verbose
 # 阶段之后执行
 after_script:
+  - git init
+  - git config user.name "teemo"
+  - git config user.email "1301582878@qq.com"
+  - git add .
+  - git commit -m "Update tools"
+  - git push --force --quiet "https://${travis_github_token}github.com/aiteemo/weather.git" main
 

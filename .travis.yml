@@ -9,3 +9,6 @@ dist: trusty # 系统版本
 install: travis_retry composer install --no-interaction --prefer-source
 # 主要构建命令
 script: vendor/bin/phpunit --verbose
+# 阶段之后执行
+after_script:
+

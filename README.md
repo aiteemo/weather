@@ -1,7 +1,7 @@
 <h1 align="center"> weather </h1>
 
 <p align="center"> 
-基于高德开放平台的PHP天气信息组件。
+基于高德开放平台的PHP天气信息组件!!!。
 Jenkins 构建
 </p>
 
